@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'SegmentLED';
+    src: url(digital-clock-font/14\ Segment\ LED\ Regular.ttf,)
+    url(digital-clock-font/14\ Segment\ LED\ Pic.jpg );
+}
+@font-face {
+    font-family: 'DS';
+    src: url(digital-clock-font/DS-DIGI.TTF),
+         url(digital-clock-font/DS-DIGIB.TTF),
+         url(digital-clock-font/DS-DIGII.TTF),
+         url(digital-clock-font/DS-DIGIT.TTF);
+}
+
+/* *{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: url("img.jpg");
+    background-size: cover;
+    font-family: 'SegmentLED','DS';
+    font-weight: bold;
+}
+section{
+    display: flex;
+    margin: 10%;
+}
+div{
+    width: 40%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 20px;
+    color: #000;
+    box-shadow: 5px 10px 30px blue;
+    text-align: center;
+   
+}
+#timer{
+    display: none;
+}
+#timer input{
+    width: 50%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #a33144;
+    
+}
+#timer input:focus{
+    outline: none;
+    border: 3px dashed#a33144;
+}
+#stopwatch input{
+    width: 50%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #a33144;
+}
+#stopwatch input:focus{
+    outline: none;
+    border: 3px dashed #a33144;
+}
+#Alarm{
+    display: none;
+}
+#Alarm input{
+    width: 15%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #a33144;
+    
+}
+#Alarm input:focus{
+    outline: none;
+    border: 3px dashed blue;
+}
+button{
+    padding: 10px;
+    background-color: #a33144;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+} */
