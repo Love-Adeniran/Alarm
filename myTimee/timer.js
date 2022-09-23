@@ -1,9 +1,14 @@
-
-
+timer.style.display = 'none'
+bak.style.display = 'none'
+dt.style.display = 'inline'
+cdt.style.display = 'inline'
+Stopwatch.style.display = 'none'
 // displayCountDown= document.getElementById('timer')
 // document.getElementById('timer')
 // timer.style.display ="none"
     // song1 = new Audio()  
+
+
     
     hh = 00;
     mm = 00;
@@ -41,7 +46,7 @@ const stopWatch =()=>{
     clearTimeout(set)
 }
 
-let myAudio = new Audio("Clock-sound-effect.mp3")
+let myAudio = new Audio("../Clock-sound-effect.mp3")
 const countDown=()=>{
     let myHour = hour.value;
     let myMinute = minute.value;
@@ -111,13 +116,35 @@ const stopAlarm =()=>{
     myAudio.stop()
     clearTimeout(setAlarm)
 }
+const back =()=>{
+    dt.style.display = 'block'
+    cdt.style.display = 'block' 
+    timer.style.display = 'none'
+    bak.style.display = 'none'
+    Stopwatch.style.display ='none'
+
+}
 
 
-const start =()=> window.location = 'index.html'
-const back =()=> window.location = 'cDTimer.html'
-
+const cdTimer=()=> {
+    dt.style.display ='none'
+    timer.style.display = 'block'
+    bak.style.display = 'block'
+    cdt.style.display = 'none'
+}
+const stopwatch=()=>{
+    Stopwatch.style.display ='block'
+    dt.style.display ='none'
+    timer.style.display = 'none'
+    bak.style.display = 'block'
+    cdt.style.display = 'none'
+}
 
 setInterval(myTime=>{
     let myDate = new Date()
-    dispDate.innerHTML = ` ${myDate.toLocaleTimeString()} <br> ${myDate.toLocaleDateString()}`;
+    dispDate.innerHTML = `${myDate.toLocaleTimeString()} <br> ${myDate.toLocaleDateString()}`
+    aDate.innerHTML = myDate.toLocaleTimeString();
+    ;
 }, 1000);
+
+
