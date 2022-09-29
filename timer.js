@@ -3,13 +3,14 @@ bak.style.display = 'none'
 dt.style.display = 'inline'
 cdt.style.display = 'inline'
 Stopwatch.style.display = 'none'
+Alarm.style.display = 'none'
 // displayCountDown= document.getElementById('timer')
 // document.getElementById('timer')
 // timer.style.display ="none"
     // song1 = new Audio()  
 
 
-    
+    // stop watch section start here
     hh = 00;
     mm = 00;
     ss = 00;
@@ -45,8 +46,10 @@ const stopWatch =()=>{
     time.value= timen
     clearTimeout(set)
 }
+//  stop watch section ends here
 
-let myAudio = new Audio("../Clock-sound-effect.mp3")
+// count down section start here
+let myAudio = new Audio("Clock-sound-effect.mp3")
 const countDown=()=>{
     let myHour = hour.value;
     let myMinute = minute.value;
@@ -90,8 +93,9 @@ const countDown=()=>{
     }
    
 }
+// countdown section end here
 
-
+// alarm section start
 
 const setAlarm =()=>{
     d = new Date();
@@ -100,11 +104,14 @@ const setAlarm =()=>{
     d.getHours()
     d.getMinutes()
     // console.log(d.getMinutes())
-    if(aHour==d.getHours() && aMinute==d.getMinutes()){
-        // alert("Wake Up")
-        myAudio.play()
+    if(ahour.value=="" || aminute==""){
+        alert('Set the time alarm')
     }
-    setA = setTimeout(setAlarm)
+    else if(ahour.value==d.getHours() && aminute.value==d.getMinutes()){
+        alert("Wake Up")
+        // myAudio.play()
+    }
+    setTimeout(setAlarm,1000)
 }
 
 const snoozeAlarm=()=>{
@@ -116,30 +123,60 @@ const stopAlarm =()=>{
     myAudio.stop()
     clearTimeout(setAlarm)
 }
+
+// alarm section end
+
+
+
+
+// The back button
 const back =()=>{
     dt.style.display = 'block'
     cdt.style.display = 'block' 
     timer.style.display = 'none'
     bak.style.display = 'none'
     Stopwatch.style.display ='none'
+    Alarm.style.display = 'none'
+    stw.style.display = 'block'
+
 
 }
 
-
+// the countdowntimer button
 const cdTimer=()=> {
     dt.style.display ='none'
     timer.style.display = 'block'
     bak.style.display = 'block'
     cdt.style.display = 'none'
+    Alarm.style.display = 'none'
+
 }
+// the stopwatch button
 const stopwatch=()=>{
     Stopwatch.style.display ='block'
     dt.style.display ='none'
     timer.style.display = 'none'
     bak.style.display = 'block'
-    cdt.style.display = 'none'
+    cdt.style.display = 'block'
+    Alarm.style.display = 'none'
+    stw.style.display = 'none'
+    alm.style.display = 'block'
+
+}
+// the alarm button
+const alarm =()=>{
+    Alarm.style.display = 'block'
+    dt.style.display ='none'
+    timer.style.display = 'none'
+    bak.style.display = 'block'
+    cdt.style.display = 'block'
+    Stopwatch.style.display ='none'
+    alm.style.display = 'none'
 }
 
+
+
+// date section
 setInterval(myTime=>{
     let myDate = new Date()
     dispDate.innerHTML = `${myDate.toLocaleTimeString()} <br> ${myDate.toLocaleDateString()}`
